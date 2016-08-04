@@ -1,1 +1,0 @@
-# material-svg-icons svg
