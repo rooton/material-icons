@@ -27,7 +27,7 @@ Meteor.methods({
                     let group_dir = root_dir + item.group_id + '/';
 
                     let svg = { dir: group_dir + 'svg/', ext: 'svg', colors: ['black', 'white'], sizes: ['18px', '24px', '36px', '48px']};
-                    let png = { dir: group_dir + 'png/', ext: 'zip', colors: ['black', 'white'], sizes: ['18dp', '24dp', '36dp', '48dp']};
+                    //let png = { dir: group_dir + 'png/', ext: 'zip', colors: ['black', 'white'], sizes: ['18dp', '24dp', '36dp', '48dp']};
 
                     if ( ! fs.existsSync(root_dir) ) {
                         
@@ -50,7 +50,7 @@ Meteor.methods({
                             });
                         }
 
-                        if( ! fs.existsSync(png.dir) ){
+                        /*if( ! fs.existsSync(png.dir) ){
                             fs.mkdirSync(png.dir);
 
                             png.sizes.forEach(function(size) {
@@ -58,7 +58,7 @@ Meteor.methods({
                                     fs.mkdirSync(png.dir + size + '/');
                                 }
                             });
-                        }
+                        }*/
                     }
 
 
@@ -81,7 +81,7 @@ Meteor.methods({
                     });
 
 
-                    png.colors.forEach(function(color) {
+                   /* png.colors.forEach(function(color) {
                         png.sizes.forEach(function(size) {
                             
                             let title = item.id + '_' + color + '_' + size + '.' + png.ext;
@@ -98,7 +98,7 @@ Meteor.methods({
                         });
                     });
 
-
+                    */
 
                 } catch (e) {
                       console.log("Cannot download: " +  e.message);  
