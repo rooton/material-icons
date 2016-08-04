@@ -33,29 +33,31 @@ Meteor.methods({
                         
                         fs.mkdirSync(root_dir);
                     
-                        if( ! fs.existsSync(group_dir) ) {
+                    }
+                    
+                    
+                    if( ! fs.existsSync(group_dir) ) {
 
-                            fs.mkdirSync(group_dir);
+                        fs.mkdirSync(group_dir);
 
-                            if( ! fs.existsSync(svg.dir) ){
-                                fs.mkdirSync(svg.dir);
+                        if( ! fs.existsSync(svg.dir) ){
+                            fs.mkdirSync(svg.dir);
 
-                                svg.sizes.forEach(function(size) {
-                                    if ( ! fs.existsSync(svg.dir + size + '/') ) {
-                                        fs.mkdirSync(svg.dir + size + '/');
-                                    }
-                                });
-                            }
+                            svg.sizes.forEach(function(size) {
+                                if ( ! fs.existsSync(svg.dir + size + '/') ) {
+                                    fs.mkdirSync(svg.dir + size + '/');
+                                }
+                            });
+                        }
 
-                            if( ! fs.existsSync(png.dir) ){
-                                fs.mkdirSync(png.dir);
+                        if( ! fs.existsSync(png.dir) ){
+                            fs.mkdirSync(png.dir);
 
-                                png.sizes.forEach(function(size) {
-                                    if ( ! fs.existsSync(png.dir + size + '/') ) {
-                                        fs.mkdirSync(png.dir + size + '/');
-                                    }
-                                });
-                            }
+                            png.sizes.forEach(function(size) {
+                                if ( ! fs.existsSync(png.dir + size + '/') ) {
+                                    fs.mkdirSync(png.dir + size + '/');
+                                }
+                            });
                         }
                     }
 
